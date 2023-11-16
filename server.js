@@ -7,7 +7,7 @@ const taskRoutes = require("./routes/taskRoute");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
