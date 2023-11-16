@@ -13,7 +13,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://mern-task-app-puce.vercel.app/"],
+    origin: (origin, callback) => {
+      // Allow requests from localhost:3000 and your Vercel deployment
+      const allowedOrigins = [
+        "http://localhost:3000",
+        "https://mern-task-app-puce.vercel.app",
+      ];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
 app.use(taskRoutes);
