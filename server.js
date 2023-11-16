@@ -15,10 +15,7 @@ app.use(
   cors({
     origin: (origin, callback) => {
       // Allow requests from localhost:3000 and your Vercel deployment
-      const allowedOrigins = [
-        "http://localhost:3000",
-        "https://mern-task-app-puce.vercel.app",
-      ];
+      const allowedOrigins = ["https://mern-task-app-puce.vercel.app"];
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
