@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "https://mern-task-app-puce.vercel.app",
+    origin: "https://mern-task-app50-onrender.app",
   })
 );
 
